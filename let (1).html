@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Website</title>
+    <link rel="stylesheet" href="let.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+    <div class="home-container" id="home-container">
+        <h1>Welcome to the Periodic Table Quiz!</h1>
+        <p>Test your knowledge about the elements of the periodic table.</p>
+        <button onclick="startQuiz()">Start Quiz</button>
+        <button id="watch-ad-btn" onclick="watchAd()" onmouseover="showAdHint()" onmouseout="hideAdHint()">Watch Ad</button>
+        <span id="ad-hint" class="hint">Watch an ad to earn 2 more freeze chances</span>
+        <div id="freeze-chances" onmouseover="showFreezeHint()" onmouseout="hideFreezeHint()">Freeze Chances: <span id="freeze-left">1</span></div>
+        <span id="freeze-hint" class="hint">Shows how many times you can freeze the timer</span>
+        <div id="ad-container"></div> <!-- Container for the ad -->
+    </div>
+    <div class="quiz-container" id="quiz-container">
+        <div class="quiz-header">
+            <h1 id="question">Loading...</h1>
+            <div class="timer" id="timer">15</div>
+            <div class="progress-bar">
+                <div id="progress" class="progress"></div>
+            </div>
+        </div>
+        <div class="quiz-body">
+            <div id="options-container" class="options-container"></div>
+        </div>
+        <button id="next-btn" onclick="nextQuestion()">Next</button>
+        <button id="freeze-btn" onclick="freezeTime()">Freeze Time (<span id="freeze-left-btn">1</span>)</button>
+    </div>
+    <div class="result-container" id="result-container">
+        <h1>Quiz Completed!</h1>
+        <p id="score">Your Score: 0</p>
+        <button onclick="showCorrections()">Show Corrections</button>
+        <button onclick="restartQuiz()">Restart Quiz</button>
+    </div>
+    
+    <div class="corrections-container" id="corrections-container">
+        <h1>Corrections</h1>
+        <div id="corrections-list"></div>
+        <button onclick="restartQuiz()">Restart Quiz</button>
+    </div>
+    </div>
+    <script src="let.js"></script>
+</body>
+</html>
